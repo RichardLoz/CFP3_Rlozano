@@ -8,5 +8,6 @@ Algoritmo Ejercicio_2
 		Leer number
 		contar = contar + 1
 	Fin Mientras
+	Imprimir "Correcto, usted adivino el numero " num  // Sume esta linea para poder mostrar al usuario  el numero que adivino
 	Imprimir "usted intento " contar " veces "
 FinAlgoritmo
