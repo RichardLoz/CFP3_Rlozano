@@ -1,12 +1,15 @@
-Algoritmo Ejercicio_1
-	Definir año , edad Como Entero
-	Escribir "ingrese el año de nacimiento"
-	leer año
-	edad <- 2018 - año
-	Escribir "La persona tiene ",edad," años "
-	Si (edad_mayoria >= 18) Entonces
-		Escribir " por lo tanto es mayor de edad "
-    Sino 
-		Escribir "por lo tanto no es mayor de edad"
-	FinSi
+Algoritmo ejercicio_1
+	definir edad Como Entero
+	EDAD_MAYORIA = 18
+	Imprimir "ingrese su edad: "
+	leer edad
+	Si  edad = EDAD_MAYORIA Entonces
+		Imprimir "usted tiene 18 años"
+	SiNo
+		Si edad > EDAD_MAYORIA Entonces
+			Imprimir "usted es mayor de 18 años"
+		SiNo
+			Imprimir "usted es menor de edad"
+		Fin Si
+	Fin Si
 FinAlgoritmo

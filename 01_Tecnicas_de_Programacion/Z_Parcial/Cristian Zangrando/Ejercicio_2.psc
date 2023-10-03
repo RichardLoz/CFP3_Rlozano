@@ -1,13 +1,13 @@
 Algoritmo Ejercicio_2
-	
-	x <- Azar (20) + 1 
-	
-	//generar numero aleatorio entre el 1 y el 20 
-	x <- 1 + Azar (20) + 1
-	
-	Para x <- 1 Hasta 20 Hacer 
-		x <-  Azar (20) + 1 
-		Escribir x , " "
-	FinPara
-    
+	Definir num Como Entero
+    Imprimir "intente adivinar un numero entre 1-20: "
+	num=azar(20)
+	contar=0
+	Mientras num <> number Hacer
+		Imprimir "ingrese un numero: "
+		Leer number
+		contar = contar + 1
+	 FinMientras
+	 Imprimir "correcto,usted adivino el numero " num // sume esta linea para poder mostrar al usuario el numero que adivino
+	 Imprimir "usted intento " contar " veces "
 	FinAlgoritmo
