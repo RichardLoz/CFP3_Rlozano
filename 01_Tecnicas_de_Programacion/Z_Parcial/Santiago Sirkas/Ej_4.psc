@@ -8,7 +8,7 @@ Algoritmo Ej_4
 		leer notas[i]
 	Fin Para
 	
-	Imprimir "Ingrese la nota que desea buscar"
+	Imprimir "Ingrese otra nota"
 	leer nota2
 	
 	existe = Falso
