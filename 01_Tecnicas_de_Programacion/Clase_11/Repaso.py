@@ -103,3 +103,9 @@ materia = "Programacyon"
 materia = materia[0:9:1] + "i" + materia[10::]
 print(materia)
 print(f"{materia[0:9:1]}i{materia[10::]}")
+
+#Array
+#Listas
+#Tuplas
+# Set
+#Diccionarios
