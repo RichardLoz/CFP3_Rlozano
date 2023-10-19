@@ -73,6 +73,7 @@
 lista1 = [1, 12, 123]
 lista2 = ["Bye", "Ciao", "Agur", "Adieu"]
 
+
 #1- Añade a la LISTA1 el int 1234 y luego el string “Hola”
 #2- Añade a la LISTA2 el string “Adios” y luego el int 1234
 #3- Genera una LISTA3 con todos los elementos de la LISTA1 menos el último
