@@ -76,20 +76,20 @@
 #4- Una lista con los últimos tres ítems de tupla
 #5- Un ítem que haya en la posición 8 de tupla
 #6- El número de veces que el ítem 7 aparece en tupla
-# tupla = (5, 12, 7, 37, 8, 86, 19, 7, -783, 87, 188, 7, 9, 12, 7, 3982)
+tupla = (5, 12, 7, 37, 8, 86, 19, 7, -783, 87, 188, 7, 9, 12, 7, 3982)
 # #TODO: RESPUESTAS
-# #1-
-# print(tupla[-1])
-# #2-
-# print(len(tupla))
-# #3-
-# print(tupla.index(87))
-# #4-
-# print(tupla[13:])
-# #5-
-# print(tupla[8])
-# #6-
-# print(tupla.count(7))
+#1-
+print(tupla[-1])
+#2-
+print(len(tupla))
+#3-
+print(tupla.index(87))
+#4-
+print(tupla[13:])
+#5-
+print(tupla[8])
+#6-
+print(tupla.count(7))
 
 
 
