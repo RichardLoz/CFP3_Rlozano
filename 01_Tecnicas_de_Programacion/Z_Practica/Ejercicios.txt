@@ -1,6 +1,6 @@
 Ejercicios:
 
-1- Escribir un programa que almacene los meses del anio (por ejemplo Enero, Feberero, Marzo......) en una lista y luego mostrar el resultado por pantalla.
+1- Escribir un programa que almacene los meses del año (por ejemplo Enero, Feberero, Marzo......Diciembre) en una lista y luego mostrar el resultado por pantalla.
 
 2- Escribir un programa que pida al usuario una palabra y la muestre por pantalla 10 veces.
 
@@ -8,6 +8,6 @@ Ejercicios:
 
 4- Para pagar un determinado impuesto se debe ser mayor de 18 años y tener un ingreso mensual igual o mayor a $200.000. Escribir un programa que pregunte al usuario su edad y sus ingresos mensuales y muestre por pantalla si el usuario debe pagar el impuesto o no.
 
-5- Escribir un programa para una empresa de juegos para todas las edades y quiere calcular de forma automática el precio que debe cobrar a sus clientes por entrar. El programa debe preguntar al usuario la edad del cliente y mostrar el precio de la entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años debe pagar $500 y si es mayor de 18 años, $1000.
+5- Escribir un programa para una empresa de juegos para todas las edades que quiere calcular de forma automática el precio que debe cobrar a sus clientes por entrar. El programa debe preguntar al usuario la edad del cliente y mostrar el precio de la entrada. Si el cliente es menor de 4 años puede entrar gratis, si tiene entre 4 y 18 años debe pagar $500 y si es mayor de 18 años, $1000.
 
 6- Escribir un programa que solicite una contrasena y esta se deba volver a confirmar, el programa terminara cuando ambas contrasenas coincidan.
