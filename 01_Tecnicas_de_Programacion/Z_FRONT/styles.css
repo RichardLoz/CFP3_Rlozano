@@ -1,0 +1,10 @@
+body {
+    background-color: rgb(136, 136, 142);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+form{
+    background-color: rgb(71, 225, 104);
+    width: 600px;
+}
