@@ -1,7 +1,8 @@
 
 #TODO: FOR (SABIENDO LA CANTIDAD DE ITERACIONES)
 # meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio", "Agosto", "Septiembre", "Octubre", "Noviembre","Diciembre"]
-#meses = [mes[0], mes[1],mes[2].......,mes[12]]
+
+#meses = [mes[0], mes[1],mes[2].......,mes[11]]
 
 #PSEINT ==> ARREGLO ==> un tipo de dato
 #PYTHON ==> LISTAS ==> Heterogenas ==> Multiple tipos de datos
@@ -82,8 +83,8 @@
 # print(f"La lista quedo vacia {numeros}")
 
 #TODO: Crear un programa que almacene dos listas: usuarios y contraseñas y solicite al ingresante los datos de login (usuario y contraseña) solo se admiten 3 intentos de inicio de sesión.
-# usuarios = ["Bryan", "Tomas", "Ronal", "Santiago", "Roberto"]
-# contraseñas = ["pepito", "123", "45", "contraseña","pepito1"]
+# usuarios = ["Bryan", "Tomas", "Jesica", "Santiago", "Milagros","Tania"]
+# contraseñas = ["pepito", "123", "25", "contraseña","1425","milo"]
 # intentos = 3
 # while intentos > 0 :
 #     usuario_ingresado = input("Ingrese su usuario: ").capitalize()

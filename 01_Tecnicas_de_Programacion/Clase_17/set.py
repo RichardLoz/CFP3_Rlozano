@@ -85,3 +85,30 @@
 
 # tupla = (1,2,3,4)
 # print(dir(tupla))
+
+
+#TODO: EJERCICIO CON SET
+# Encontrar la unión de los conjuntos
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+result = set()
+
+for item in set1:
+    result.add(item)
+
+for item in set2:
+    result.add(item)
+
+print(result)
+
+#Utilizando UNION
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+result = set1.union(set2)
+print(result)
+
+#TERCER FORMA (SANTIAGO)
+set1 = {1, 2, 3, 4, 5}
+set2 = {3, 4, 5, 6, 7}
+set1.update(set2)
+print(set1)
