@@ -130,30 +130,32 @@
 
 
 #TODO: RECORRER DICCIONARIOS
-# profesor = {
-#     "nombre": "Richard",
-#     "apellido": "Lozano",
-#     "edad": 34,
-#     "correo": "rlozano@buenosaires.com.ar",
-#     "hobbies": ["Futbol", "Tennis", "Programar"]
-# }
+profesor = {
+    "nombre": "Richard",
+    "apellido": "Lozano",
+    "edad": 34,
+    "correo": "rlozano@buenosaires.com.ar",
+    "hobbies": ["Futbol", "Tennis", "Programar"]
+}
 
-# #Recorriendo las claves
-# print("CLAVES")
-# for clave in profesor.keys():
-#     print(clave)
+#print(profesor)
 
-# #Recorriendo los valores
-# print("")
-# print("VALORES")
-# for valor in profesor.values():
-#     print(valor)
+#Recorriendo las claves
+print("CLAVES")
+for clave in profesor.keys():
+    print(clave)
 
-# #Recorriendo los items
-# print("")
-# print("ITEMS")
-# for items in profesor.items():
-#     print(items)
+#Recorriendo los valores
+print("")
+print("VALORES")
+for valor in profesor.values():
+    print(valor)
+
+#Recorriendo los items
+print("")
+print("ITEMS")
+for items in profesor.items():
+    print(items)
 
 
 #TODO: El usuario ingresa los valores:
@@ -168,21 +170,21 @@
 # print(mascota)
 
 #Forma 2
-club = {
-    "nombre": "",
-    "barrio": "",
-    "colores": "",
-    "cantidad_hinchas": 0,
-    "estadio": ""
-}
+# club = {
+#     "nombre": "",
+#     "barrio": "",
+#     "colores": "",
+#     "cantidad_hinchas": 0,
+#     "estadio": ""
+# }
 
-for clave in club:
-    valor = input(f"Ingrese {clave} del club: ")
+# for clave in club:
+#     valor = input(f"Ingrese {clave} del club: ")
     
-    if clave == "cantidad_hinchas" :
-        club[clave] = int(valor)
-    else:
-        club[clave] = valor
+#     if clave == "cantidad_hinchas" :
+#         club[clave] = int(valor)
+#     else:
+#         club[clave] = valor
 
-print("Los datos del club son los siguientes: ")
-print(club)
+# print("Los datos del club son los siguientes: ")
+# print(club)
