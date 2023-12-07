@@ -1,10 +1,58 @@
 body {
-    background-color: rgb(136, 136, 142);
     font-family: Arial, Helvetica, sans-serif;
+    /*Propiedad para poner imagen de fondo */   
+    background-image: url('fondo.jpg'); 
+    background-size: cover;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #333;
     text-align: center;
 }
 
-form{
-    background-color: rgb(71, 225, 104);
-    width: 600px;
+/* ESTILOS AL FORMULARIO */
+form {
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    background-color: rgba(255,255,255, 0.5);
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
+
+/* ESTILOS DEL LABEL */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* ESTILOS PARA LOS IMPUTS */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ESTILOS PARA LOS BOTONES */
+input[type="submit"], input[type="reset"] {
+    width: 48%;
+    background-color: #7868c8;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+}
+
