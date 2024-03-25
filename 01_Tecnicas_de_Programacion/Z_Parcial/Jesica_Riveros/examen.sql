@@ -1,0 +1,14 @@
+--1. Seleccionar LAS PRIMERAS 5 VENTAS DEL AÑO 2023 Y ORDENARLAS POR TIENDA DE FORMA DESCENDENTE
+select * from Venta WHERE F_HORA_VENTA like'%2023%' ORDER by ID_Tienda DESC
+
+--2. CONTABILIZAR LA  CANTIDAD TOTAL DE VENTAS
+SELECT count (ID_Venta) as 'total_ventas' from Venta
+
+--3. SELECCIONAR LOS PRODUCTOS CUYO STOCK SEA MAYOR A 50
+SELECT*FROM Producto WHERE STOCK> 50
+
+--4. CONTABILIZAR LA CANTIDAD DE CLIENTES CUYO APELLIDO TERMINE EN "O"
+Select count ( ID_ClienteS)as 'total_clientes' FROM ClienteS where Apellido like '%o'
+
+--5. ACTUALIZAR EL NOMBRE A "MANGUITO" Y LA DIRECCION  A "AV CABILDO 4500"  DE LA TIENDA 6
+update Tienda set Nombre = 'manguito' AND DIRECCION = 'av cabildo 4500'  where ID_Tienda = 6
