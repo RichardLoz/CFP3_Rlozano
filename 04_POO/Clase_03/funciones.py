@@ -133,14 +133,14 @@ resultado_2 = promedio()
 #TODO: Contraseña: mayor a 8 caracteres
 #Si no se cumple con estas condiciones, informar al usuario
 #TODO: OPCION_1
-# def validar_usuario(user,password):
-#     if len(user)>=6 and len(password)>8:
-#         return "Bienvenido"
-#     else:
-#         return "Usuario o Contraseña incorrectos"
+def validar_usuario(user,password):
+    if len(user)>=6 and len(password)>8:
+        return "Bienvenido"
+    else:
+        return "Usuario o Contraseña incorrectos"
     
-# validar = validar_usuario("Richard","123456789")
-# print(validar)
+validar = validar_usuario("Richard","123456789")
+print(validar)
 
 
 # #TODO: OPCION_2
