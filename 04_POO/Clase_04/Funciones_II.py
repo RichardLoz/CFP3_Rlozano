@@ -58,30 +58,40 @@ resultado = calcular_perimetro(10,30,23,42,53,3)
 #print(resultado)
 
 #TODO: EFICIENCIA DE EJECUCION
-import  time
+# import  time
 
-def suma_for(lista):
-    suma = 0
-    for i in lista:
-        suma += i
-    return suma
-
-
-def suma_sum(lista):
-    return sum(lista)
-
-lista = [1,2,3,4,5,6,7,324,235,235,235,253,235,236,236,236,236,326,236,623,324325325326236236236236236236,236236236236236236236236236]
-
-time_inicio = time.time()
-resultado_for = suma_for(lista)
-time_final = time.time()
-time_for = time_final - time_inicio
+# def suma_for(lista):
+#     suma = 0
+#     for i in lista:
+#         suma += i
+#     return suma
 
 
+# def suma_sum(lista):
+#     return sum(lista)
 
-resultado_sum = suma_sum(lista)
+# lista = [1,2,3,4,5,6,7,324,235,235,235,253,235,236,236,236,236,326,236,623,324325325326236236236236236236,236236236236236236236236236]
+
+# time_inicio = time.time()
+# resultado_for = suma_for(lista)
+# time_final = time.time()
+# time_for = time_final - time_inicio
 
 
-#RESULTADO
-print(f"Resultado de la suma for: {resultado_for} en tiempo: {time_for}")
-print(resultado_sum)
+
+# resultado_sum = suma_sum(lista)
+
+
+# #RESULTADO
+# print(f"Resultado de la suma for: {resultado_for} en tiempo: {time_for}")
+# print(resultado_sum)
+
+
+
+#TODO: Crear una funcion que acepte como argumentos un numero indefinido de STRING y devuelva una cadena que contenga todos los argumentos concatenados en una sola cadena, separada por un separador opcional, si no se proporciona un separador, la funcion debe utilizar un espacio en blanco por default.
+
+def concatenar(*args,separador=' '):
+    return separador.join(args)
+
+resultado = concatenar("Milagros","Daivis","Jesica",separador=".")
+print(resultado)
