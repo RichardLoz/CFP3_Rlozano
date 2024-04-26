@@ -39,7 +39,7 @@ def suma_bucle():
 
 # frutas = ["manzana", "banana", "pera", "anana", "naranja"]
 
-# for indice,fruta in enumerate (frutas, start = 1):
+# for indice,fruta in enumerate (frutas, start = 10):
 #     print(f"Fruta {indice}: {fruta}")
 
 
@@ -70,7 +70,7 @@ def suma_bucle():
         
     
         
-suma_bucle()
+#suma_bucle()
 
 
 
