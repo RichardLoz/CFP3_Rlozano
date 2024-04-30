@@ -13,8 +13,8 @@ def operacion():
             return balance - cantidad
         else:
             return None, "No tiene saldo suficiente para esta operacion"
-    print(deposito(100, 400))
-    print(retiro(800, 500))
+    print(deposito(800, 400))
+    print(retiro(200, 500))
     
 #operacion()
 
@@ -37,7 +37,7 @@ def operacion(cantidad, balance, tipo='deposito' ):
         return retiro(cantidad,balance)
         
     
-resultado = operacion(100,300)
+resultado = operacion(100,300,tipo='retiro')
 #print(resultado)
 
 
@@ -79,5 +79,8 @@ print(resultado_resta)
 print(resultado_multi)
 print(resultado_divi)
 print(resultado_signo)
+
+
+
 
 

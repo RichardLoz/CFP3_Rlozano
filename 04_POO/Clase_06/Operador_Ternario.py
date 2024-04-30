@@ -1,30 +1,3 @@
-
-#TODO: Cual seria la logica para evaluar un numero y si es este es mayor o igual a 6 mostrar el mensaje "Verde" y sino mostrar el mensaje "Rojo".
-
-#Variables
-#En Python tenemos la posibilidad de declarar variables vacias, es decir con valor "None"
-nota = 5
-color = None
-
-# if nota >= 6:
-#     print("Verde")
-# else:
-#     print("Rojo")
-    
-    
-#Operador Ternario: Nos permite evaluar una condicion de manera abreviada.
-
-# nota = 5
-# color = "Verde" if nota >= 6 else "Rojo"
-
-# print(nota,color)
-
-#TODO: Dado un numero entero, imprimir "Es PAR" si el numero es PAR, y "Es IMPAR" si el numero es IMPAR.
-#TRADICIONAL
-# num = int(input("Ingrese un numero: "))
-# if num % 2 == 0:
-#     print("Es PAR")
-# else:
 #     print("Es IMPAR")
 
 #TERNARIO
