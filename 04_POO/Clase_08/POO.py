@@ -17,13 +17,35 @@ class Persona:
 
 #Objeto: Una instancia de una clase, Se crea utilizando la clase como plantilla y representa una entidad del mundo real. Cada objeto tiene sus propios atributos y puede ejecutar sus propios metodos.
 #Crear objeto de la clase persona.
-persona1 = Persona("Tomas", 26)
-print("Atributos")
-print(persona1.nombre)
-print(persona1.edad)
-print("\n")
-print("Metodos")
-persona1.saludar()
+# persona1 = Persona("Tomas", 26)
+# print("Atributos")
+# print(persona1.nombre)
+# print(persona1.edad)
+# print("\n")
+# print("Metodos")
+# persona1.saludar()
 
 
 #TODO: Crear una clase llamada "Libro" que represente un libro. La clase debe tener los siguientes atributos: titulo, autor, paginas, editorial, fecha_publicacion. Y un metodo llamado "informacion" que imprima todos los datos del libro. Crear dos objetos de la clase Libro
+
+class Libro:
+    def __init__(self,titulo,autor,paginas,editorial,fecha_publi):
+        self.titulo = titulo
+        self.autor = autor
+        self.paginas = paginas
+        self.editorial = editorial
+        self.fecha_publi = fecha_publi
+        
+    def informacion(self):
+        print(f"El titulo del libro es {self.titulo}")
+        print(f"El libro lo escribio {self.autor}")
+        print(f"El libro tiene {self.paginas} paginas")
+        print(f"La editorial es {self.editorial}")
+        print(f"Fecha de publicacion: {self.fecha_publi}")
+        
+libro1 = Libro("El señor de los anillos","Tomas",569, "Genios", 1987)
+# print(libro1.autor)
+# print(libro1.titulo)
+# print(libro1.fecha_publi)
+
+libro1.informacion()
