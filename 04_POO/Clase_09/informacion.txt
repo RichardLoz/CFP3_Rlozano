@@ -1,0 +1,10 @@
+El titulo del libro es Harry Potter
+El autor del libro es Jesica
+El libro tiene 868 paginas
+La editorial del libro es Mili
+La fecha de publicacion del libro es 2008
+El titulo del libro es Condorito
+El autor del libro es Richard
+El libro tiene 56 paginas
+La editorial del libro es Condor
+La fecha de publicacion del libro es 1978
