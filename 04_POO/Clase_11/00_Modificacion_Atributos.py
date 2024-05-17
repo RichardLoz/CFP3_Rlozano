@@ -10,7 +10,7 @@ class Alumno:
         return self.nombre
         
 # #INICIALIZAR
-alumno1 = Alumno("Mateo","Gonzalez",27)
+# alumno1 = Alumno("Mateo","Gonzalez",27)
 # print(f"Objeto alumno1: {alumno1.nombre} {alumno1.apellido} {alumno1.edad}\n")
 # alumno1.nombre = "Juan"
 # alumno1.apellido = "Gonzales"
@@ -18,8 +18,13 @@ alumno1 = Alumno("Mateo","Gonzalez",27)
 # print("Informacion de alumno1 luego de la modificacion")
 # print(f"Objeto alumno1: {alumno1.nombre} {alumno1.apellido} {alumno1.edad}\n")
 
-alumno2 = Alumno("Laura", "Fernandez", 22)
+# alumno2 = Alumno("Laura", "Fernandez", 22)
 # print(f"Objeto alumno2: {alumno2.nombre} {alumno2.apellido} {alumno2.edad}\n")
+
+# alumno3 = Alumno("Roberto","Zare", 18)
+# print(f"Objeto alumno3: {alumno3.nombre} {alumno3.apellido} {alumno3.edad}\n")
+# alumno3.edad = 25
+# print(f"Objeto alumno3: {alumno3.nombre} {alumno3.apellido} {alumno3.edad}\n")
 
 #TODO: Si bien esto es posible, es decir modificar los valores de un objeto accediento a sus atributos, no es la manera mas recomendable, a medida que vayamos avanzando veremos que lo idel es hacerlo mediante metodos (PILAR: Encapsulamiento).
 
@@ -49,7 +54,7 @@ class Calculadora:
     def division(self):
         return self.num1 / self.num2
     
-operacion1 = Calculadora(5,3)
+# operacion1 = Calculadora(5,3)
 # print(f"El resultado de la suma es {operacion1.suma()}")
 # print(f"El resultado de la resta es {operacion1.resta()}")
 # print(f"El resultado de la multiplicacion es {operacion1.multiplicacion()}")
@@ -80,9 +85,3 @@ print(f"El resultado de la potencia es {operacion2.potencia()}")
 print(f"El resultado de la raiz cuadrada es {operacion2.raiz_cuadrada()}")
 print(f"El resultado del seno es {operacion2.seno()}")
 print(f"El resultado del coseno es {operacion2.coseno()}")
-    
-    
-    
-
-
-
