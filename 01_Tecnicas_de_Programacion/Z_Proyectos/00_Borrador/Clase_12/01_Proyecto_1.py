@@ -1,4 +1,4 @@
-# pip install SpeechRecognition
+# pip install SpeechRecognition ==> Nos ayudara a decdificar el audio
 # pip install PyAudio# pip install setuptools
 
 
