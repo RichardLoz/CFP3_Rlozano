@@ -3,9 +3,6 @@
 
 #Importar la biblioteca pytube, que se utiliza para descargar videos de Youtube
 
-
-
-
 import pytube
 
 # Define una función llamada descargar_video que toma dos parámetros: la URL del video y la carpeta de destino
@@ -28,4 +25,4 @@ def descargar_video(url, carpeta):
 
 # # C:\Users\richi\Downloads\Videos
 # Llama a la función descargar_video con una URL específica de YouTube y una carpeta de destino
-descargar_video("https://m.youtube.com/watch?v=EQRERIwnE_g", "C:/Users/richi/Downloads/Videos")
+descargar_video("https://www.youtube.com/watch?v=NpyCI345WMM&pp=ygUkdmlkZW9zIGRlIGR1cmFjaW9uIGRlIHBvY29zIHNlZ3VuZG9z", "C:/Users/richi/Downloads/Videos")

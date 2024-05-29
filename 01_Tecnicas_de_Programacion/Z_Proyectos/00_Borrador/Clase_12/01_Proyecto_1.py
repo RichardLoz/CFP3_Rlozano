@@ -1,5 +1,6 @@
 # pip install SpeechRecognition ==> Nos ayudara a decdificar el audio
-# pip install PyAudio# pip install setuptools
+# pip install PyAudio
+# pip install setuptools
 
 
 # Importa la biblioteca speech_recognition como sr
