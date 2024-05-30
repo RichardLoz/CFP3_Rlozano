@@ -1,10 +1,13 @@
 from tkinter import ttk
 from tkinter import *
 
+import backend
+
 class Productos:
     def __init__(self,window):
         self.window = window
         self.window.title("Sistema de Stock")
+        backend.inicializar_db()
         
         #Creación del contenedor
         frame = LabelFrame(self.window, text="Registrar nuevo producto")
@@ -34,6 +37,10 @@ class Productos:
         #Boton para agregar producto
         ttk.Button(frame, text="Guardar Producto").grid(row=5, columnspan=2, sticky=W + E)
         
+        #Mensaje de confirmación
+        self.mensaje = Label(text="", fg="red")
+        self.mensaje.grid(row=6, column=0, columnspan=4, sticky=W + E)
+        
         #Tabla para mostrar los productos
         self.tree = ttk.Treeview(height=10, columns=("Categoria", "Stock", "Descripcion"))
         self.tree.grid(row=5, column=0)
@@ -42,11 +49,18 @@ class Productos:
         self.tree.heading('Stock', text="Stock", anchor=CENTER)
         self.tree.heading('Descripcion', text="Descripcion", anchor=CENTER)
         
+        # Ancho de columnas
         self.tree.column('#0', width=100)
         self.tree.column('Categoria', width=100)
         self.tree.column('Stock', width=100)
         self.tree.column('Descripcion', width=150)
         
+        #Botones para eliminar y editar productos
+        ttk.Button(text="ELIMINAR").grid(row=8, column=0, columnspan=1, sticky= W + E)
+        ttk.Button(text="EDITAR").grid(row=9, column=0, columnspan=1, sticky= W + E)
+        
+        # Llenar la tabla de productos existentes
+        #self.obtener_productos()
 if __name__ == '__main__':
     window = Tk()
     aplicacion = Productos(window)

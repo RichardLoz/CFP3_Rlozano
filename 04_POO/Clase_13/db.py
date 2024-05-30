@@ -47,5 +47,5 @@ def validar_usuario(usuario, contraseña):
 crear_tabla()
 
 
-insertar_usuario("Roberto","123456")
+#insertar_usuario("Roberto","123456")
 
