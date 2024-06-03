@@ -43,7 +43,5 @@ def actualizar_producto(nombre_nuevo, nombre, stock_nuevo, stock_viejo):
     run_query(query, parameters)
     
     
-inicializar_db()
-agregar_producto("Agua", "Coca", 100, "vidrio")
     
     

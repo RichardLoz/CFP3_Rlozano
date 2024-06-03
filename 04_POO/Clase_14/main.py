@@ -35,7 +35,7 @@ class Productos:
         self.descripcion.grid(row=4, column=1)
         
         #Boton para agregar producto
-        ttk.Button(frame, text="Guardar Producto").grid(row=5, columnspan=2, sticky=W + E)
+        ttk.Button(frame, text="Guardar Producto", command=self.agregar_producto).grid(row=5, columnspan=2, sticky=W + E)
         
         #Mensaje de confirmación
         self.mensaje = Label(text="", fg="red")
@@ -60,7 +60,52 @@ class Productos:
         ttk.Button(text="EDITAR").grid(row=9, column=0, columnspan=1, sticky= W + E)
         
         # Llenar la tabla de productos existentes
-        #self.obtener_productos()
+        self.obtener_productos()
+    
+    #Validar que los datos no esten vacios.
+    def validar_datos(self):
+        return len(self.nombre.get()) != 0 and len(self.stock.get()) != 0 and len(self.categoria.get())!= 0
+        
+    
+    #Metodo que agregar productos
+    def agregar_producto(self):
+        from backend import agregar_producto
+        if self.validar_datos():
+            agregar_producto(self.nombre.get(), self.categoria.get(), self.stock.get(), self.descripcion.get())
+            self.mensaje['text'] = 'Producto {} agregago correctamente'.format(self.mensaje)
+            
+            #Limpiar los campos de entrada
+            #DELETE(I,F)
+            self.nombre.delete(0, END)
+            self.categoria.delete(0, END)
+            self.stock.delete(0, END)
+            self.descripcion.delete(0, END)
+        else:
+            self.mensaje['text'] = 'Todos los campos son requeridos'
+        self.obtener_productos()
+        
+        
+    def obtener_productos(self):
+        from backend import obtener_productos
+        #Obtener todas las filas actuales de mi tabla
+        grabados = self.tree.get_children() 
+        for elemento in grabados:
+            self.tree.delete(elemento)
+        
+        #Consulto los datos
+        #LLamar a la funcion obtener_productos para obtener los productos de la DB
+        productos = obtener_productos()
+        for row in productos:
+            self.tree.insert('',0, text=row[1],values=row[3])
+            
+            
+            
+            
+            
+        
+        
+
+        
 if __name__ == '__main__':
     window = Tk()
     aplicacion = Productos(window)
