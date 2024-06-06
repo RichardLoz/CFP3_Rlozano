@@ -56,23 +56,18 @@ class Productos:
         self.tree.column('Descripcion', width=150)
         
         #Botones para eliminar y editar productos
-        ttk.Button(text="ELIMINAR").grid(row=8, column=0, columnspan=1, sticky= W + E)
-        ttk.Button(text="EDITAR").grid(row=9, column=0, columnspan=1, sticky= W + E)
+        ttk.Button(text="ELIMINAR", command=self.eliminar_productos).grid(row=8, column=0, columnspan=1, sticky= W + E)
+        ttk.Button(text="EDITAR", command=self.editar_productos).grid(row=9, column=0, columnspan=1, sticky= W + E)
         
         # Llenar la tabla de productos existentes
         self.obtener_productos()
-    
-    #Validar que los datos no esten vacios.
-    def validar_datos(self):
-        return len(self.nombre.get()) != 0 and len(self.stock.get()) != 0 and len(self.categoria.get())!= 0
         
-    
-    #Metodo que agregar productos
+        #Metodo que agregar productos
     def agregar_producto(self):
         from backend import agregar_producto
         if self.validar_datos():
             agregar_producto(self.nombre.get(), self.categoria.get(), self.stock.get(), self.descripcion.get())
-            self.mensaje['text'] = 'Producto {} agregago correctamente'.format(self.mensaje)
+            self.mensaje['text'] = 'Producto {} agregago correctamente'.format(self.nombre.get())
             
             #Limpiar los campos de entrada
             #DELETE(I,F)
@@ -83,7 +78,10 @@ class Productos:
         else:
             self.mensaje['text'] = 'Todos los campos son requeridos'
         self.obtener_productos()
-        
+    
+    #Validar que los datos no esten vacios.
+    def validar_datos(self):
+        return len(self.nombre.get()) != 0 and len(self.stock.get()) != 0 and len(self.categoria.get())!= 0  
         
     def obtener_productos(self):
         from backend import obtener_productos
@@ -96,9 +94,68 @@ class Productos:
         #LLamar a la funcion obtener_productos para obtener los productos de la DB
         productos = obtener_productos()
         for row in productos:
-            self.tree.insert('',0, text=row[1],values=row[3])
+            self.tree.insert('',0, text=row[1],values=(row[2],row[3],row[4]))
             
+    def eliminar_productos(self):
+        from backend import eliminar_producto, obtener_productos
+        self.mensaje['text'] = ''
+        
+        try:
+            self.tree.item(self.tree.selection())['text'][0]
+        except IndexError as e:
+            self.mensaje['text'] = 'Debe seleccionar un producto'
+            return
+        
+        nombre = self.tree.item(self.tree.selection())['text']
+        eliminar_producto(nombre)
+        self.mensaje['text'] = 'Producto {} eliminado correctamente'.format(nombre)
+        self.obtener_productos()
+        
+    def editar_productos(self):
+        self.mensaje['text'] = ''
+        
+        try:
+            self.tree.item(self.tree.selection())['text'][0]
+        
+        except Exception as e:
+            self.mensaje['text'] = "Debe seleccionar un producto"
+            return
+        #Obtener el nombre del producto
+        nombre = self.tree.item(self.tree.selection())['text']
+        stock_viejo = self.tree.item(self.tree.selection())['values'][1]
+        #Crear una nueva ventana para editar el producto
+        self.ventana_editar = Toplevel()
+        self.ventana_editar.title = 'Editar Producto'
+        
+        #Etiqueta y campo de entrada para mostrar el nombre actual
+        Label(self.ventana_editar, text='Nombre Actual: ').grid(row=0, column=1)
+        Entry(self.ventana_editar, textvariable = StringVar(self.ventana_editar, value=nombre), state='readonly').grid(row=0, column=2)
+        
+        #Etiqueta y campo para el nuevo nombre:
+        Label(self.ventana_editar,text='Nombre Nuevo: ').grid(row=1, column=1)
+        nombre_nuevo = Entry(self.ventana_editar)
+        nombre_nuevo.grid(row=1, column=2)
+        
+        #Etiqueta y campo de entrada para mostrar el stock actual
+        Label(self.ventana_editar, text='Stock Actual: ').grid(row=2, column=1)
+        Entry(self.ventana_editar, textvariable=StringVar(self.ventana_editar, value=stock_viejo), state='readonly'
+        ).grid(row=2, column=2)
+        
+        #Etiqueta y campo de entrada para el nuevo stock
+        Label(self.ventana_editar, text='Stock Nuevo: ').grid(row=3, column=1) 
+        stock_nuevo = Entry(self.ventana_editar)
+        stock_nuevo.grid(row=3, column=2)
+        
+        #Boton para actualizar el producto con los nuevos valores
+        Button(self.ventana_editar, text="Actualizar", command=lambda:self.actualizar_productos(nombre_nuevo.get(), nombre, stock_nuevo.get(), stock_viejo)).grid(row=4, column=2, sticky=W)
             
+        
+    def actualizar_productos(self, nombre_nuevo,nombre,stock_nuevo,stock_viejo):
+        from backend import actualizar_producto, obtener_productos
+        actualizar_producto(nombre_nuevo,nombre,stock_nuevo,stock_viejo)
+        self.ventana_editar.destroy()
+        self.mensaje['text'] = 'Producto {} actualizado correctamente'.format(nombre)
+        self.obtener_productos()
             
             
             

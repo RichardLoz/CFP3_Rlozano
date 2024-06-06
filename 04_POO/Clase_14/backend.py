@@ -38,7 +38,7 @@ def eliminar_producto(nombre):
     run_query(query,(nombre,))
 
 def actualizar_producto(nombre_nuevo, nombre, stock_nuevo, stock_viejo):
-    query = 'UPDATE productos set nombre = ?, stock = ?, where nombre = ? and stock = ?'
+    query = 'UPDATE productos set nombre = ?, stock = ? where nombre = ? and stock = ?'
     parameters = (nombre_nuevo, stock_nuevo, nombre, stock_viejo)
     run_query(query, parameters)
     
