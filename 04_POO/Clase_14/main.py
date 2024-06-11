@@ -157,9 +157,6 @@ class Productos:
         self.mensaje['text'] = 'Producto {} actualizado correctamente'.format(nombre)
         self.obtener_productos()
             
-            
-            
-        
         
 
         
