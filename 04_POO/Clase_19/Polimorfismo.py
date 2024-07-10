@@ -82,14 +82,14 @@ class Triangulo(Figura):
 def imprimir_area(figura):
     print(f"El area de la figura es: {figura.calcular_area()}")
     
-rectangulo = Rectangulo(10,20)
-circulo = Circulo(10)
-triangulo = Triangulo(10,20)
+# rectangulo = Rectangulo(10,20)
+# circulo = Circulo(10)
+# triangulo = Triangulo(10,20)
 
-figuras = [rectangulo, circulo, triangulo]
+# figuras = [rectangulo, circulo, triangulo]
 
-for figura in figuras:
-    imprimir_area(figura)
+# for figura in figuras:
+#     imprimir_area(figura)
 
 # imprimir_area(rectangulo)
 # imprimir_area(circulo)
@@ -129,3 +129,91 @@ for figura in figuras:
         #- calcular_salarios() : Calcular y devolver la suma de todos los salarios de todos los empleados de la lista
         # - __str__ : Una representación en cadena de la lista de nombres de empleados
 
+
+
+
+
+class Empleado:
+    def __init__(self,nombre,id_empleado):
+        self.__nombre = nombre
+        self.__id_empleado = id_empleado
+    
+    def calcular_salario(self):
+        pass
+    
+    def get_nombre(self):
+        return self.__nombre
+    
+    def set_nombre(self):
+        return self.__nombre
+    
+    def get_id_empleado(self):
+        return self.__id_empleado
+    
+    def set_id_empleado(self):
+        return self.__id_empleado
+    
+    def __str__(self):
+        return f"ID:{self.__id_empleado} - Nombre: {self.__nombre}"
+
+class EmpleadoTiempoCompleto(Empleado):
+    def __init__(self,nombre,id_empleado,salario_mensual):
+        super().__init__(nombre,id_empleado)
+        self.__salario_mensual = salario_mensual
+    
+    def calcular_salario(self):
+        return self.__salario_mensual
+
+class EmpleadoMedioTiempo(Empleado):
+    def __init__(self,nombre,id_empleado,salario_por_hora,horas_trabajadas):
+        super().__init__(nombre,id_empleado)
+        self.__salario_por_hora = salario_por_hora
+        self.__horas_trabajadas = horas_trabajadas
+    
+    def calcular_salario(self):
+        return self.__salario_por_hora * self.__horas_trabajadas
+    
+
+class EmpleadoFreelance(Empleado):
+    def __init__(self,nombre,id_empleado,tarifa_proyecto):
+        super().__init__(nombre, id_empleado)
+        self.__tarifa_proyecto = tarifa_proyecto
+        
+    def calcular_salario(self):
+        return self.__tarifa_proyecto
+    
+class GestionEmpleados:
+    def __init__(self):
+        self.lista_empleados = []
+        
+    def agregar_empleado(self, empleado):
+        self.lista_empleados.append(empleado)
+    
+    def agregar_varios_empleados(self, *empleados):
+        for empleado in empleados:
+            self.agregar_empleado(empleado)
+
+    def eliminar_empleado_por_id(self,id_empleado):
+        self.lista_empleados = [emp for emp in self.lista_empleados if emp.get_id_empleado() != id_empleado]
+        
+    def mostrar_empleados(self):
+        for emp in self.lista_empleados:
+            print(emp)
+            
+    def calcular_salarios_totales(self):
+        return sum(emp.calcular_salario() for emp in self.lista_empleados)
+    
+tomas = EmpleadoTiempoCompleto("Tomas",1,1800000)
+mila = EmpleadoMedioTiempo("Milagros",2,1000,90)
+jesi = EmpleadoFreelance("Jesica",3,280000)
+bryan = EmpleadoFreelance("Bryan",4,280000)
+
+gestion = GestionEmpleados()
+
+
+gestion.agregar_varios_empleados(tomas,mila,jesi,bryan)
+print("Lista de empleados")
+gestion.mostrar_empleados()
+
+print("Salarios Totales")
+print(gestion.calcular_salarios_totales())
