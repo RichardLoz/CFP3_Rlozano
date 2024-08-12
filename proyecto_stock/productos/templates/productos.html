@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Listado de Productos</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <div class="container">
+            <h1 class="text-center m-4"> Listado de Productos </h1>
+            <table class=table table-bordered table-striped text-center>
+                <thead>
+                    <tr>
+                        <td class="bg-primary text-white">ID</td>
+                        <td class="bg-primary text-white">Nombre</td>
+                        <td class="bg-primary text-white">Descripcion</td>
+                        <td class="bg-primary text-white">Precio</td>
+                        <td class="bg-primary text-white">Stock</td>
+                        <td class="bg-primary text-white">Acciones</td>
+                    </tr>
+                    <tbody>
+                        {% for producto in productos%}
+                            <tr>
+                                <td> {{producto.id}}</td>
+                                <td> {{producto.nombre}}</td>
+                                <td> {{producto.descripcion}}</td>
+                                <td> {{producto.precio}}</td>
+                                <td> {{producto.stock}}</td>
+                                <td>
+                                    <a href="{% url 'editar_producto' producto.id%}" type="button" class="btn btn-success">Editar</a>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                </td>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                </thead>
+            </table>
+
+            <form action="{% url 'crear_producto'%}" method="POST" class="form-group">
+                {% csrf_token %}
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" type="text" name="nombre">
+
+                <label for="descripcion">Descripcion:</label>
+                <input class="form-control" type="text" name="descripcion">
+
+                <label for="precio">Precio:</label>
+                <input class="form-control" type="number" name="precio">
+
+                <label for="stock">Stock:</label>
+                <input class="form-control" type="number" name="stock">
+
+                <button type="submit" class="btn btn-primary m-5">Crear Producto</button>
+            </form>
+        </div>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    </body>
+</html>
